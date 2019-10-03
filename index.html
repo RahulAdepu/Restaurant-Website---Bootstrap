@@ -34,7 +34,7 @@
                                 class="fa fa-address-card fa-lg"></span> Contact</a></li>
                 </ul>
                 <span class="navbar-text">
-                    <a data-toggle="modal" data-target="#loginModal">
+                    <a href="#" id="LoginButton">
                         <span class="fa fa-sign-in"></span>Login
                     </a>
                 </span>
@@ -148,7 +148,7 @@
                     <img class="img-fliud " src="img/logo.png">
                 </div>
                 <div class="col-12 col-sm align-self-center">
-                    <a class="btn btn-sm btn-warning btn-block " data-toggle="modal" data-target="#reserveModal">Reserve
+                    <a class="btn btn-sm btn-warning btn-block " id="ReserveButton">Reserve
                         Table</a>
 
                 </div>
@@ -325,6 +325,7 @@
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
     <script>
         $(document).ready(function () {
+            
             $("#mycarousel").carousel( { interval: 1000 } );
             $("#carouselButton").click(function () {
                 if ($("#carouselButton").children("span").hasClass('fa-pause')) {
@@ -337,6 +338,12 @@
                     $("#carouselButton").children("span").removeClass('fa-play');
                     $("#carouselButton").children("span").addClass('fa-pause');
                 }
+            });
+            $("#ReserveButton").click(function(){
+                $("#reserveModal").modal("toggle");
+            });
+            $("#LoginButton").click(function(){
+                $("#loginModal").modal("toggle");
             });
         });
 
