@@ -1,8 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-
+<?php
+    if(!$_SESSION['username']){
+        header('Location: login.php');
+    }
+?>
 <head>
-
     <title>Ristorante Con Fusion: About Us</title>
     <!-- Required meta tags always come first -->
     <meta charset="utf-8">
@@ -25,11 +28,15 @@
             <a class="navbar-brand" href="index.html"><img src="img/logo.png" height="30" width="41"></a>
             <div class="collapse navbar-collapse" id="Navbar">
                 <ul class="navbar-nav mr-auto">
-                        <li class="nav-item"><a class="nav-link" href="./index.html"><span class="fa fa-home fa-lg"></span> Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="./aboutus.html"><span class="fa fa-info fa-lg"></span> About</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#"><span class="fa fa-list fa-lg"></span> Menu</a></li>
-                        <li class="nav-item active"><a class="nav-link" href="#"><span class="fa fa-address-card fa-lg"></span> Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./index.php"><span class="fa fa-home fa-lg"></span> Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./aboutus.php"><span class="fa fa-info fa-lg"></span> About</a></li>
+                    <li class="nav-item active"><a class="nav-link" href="#"><span class="fa fa-address-card fa-lg"></span> Contact</a></li>
                 </ul>
+                <span class="navbar-text">
+                    <a href="logout.php" id="LoginButton">
+                        <span class="fa fa-sign-in"></span>Logout
+                    </a>
+                </span>
             </div>
         </div>
     </nav>
@@ -50,7 +57,7 @@
     <div class="container">
         <div class="row">
             <ol class="col-12 breadcrumb">
-                <li class="breadcrumb-item"><a href="./index.html">Home</a></li>
+                <li class="breadcrumb-item"><a href="./index.php">Home</a></li>
                 <li class="breadcrumb-item active">Contact Us</li>
             </ol>
             <div class="col-12">

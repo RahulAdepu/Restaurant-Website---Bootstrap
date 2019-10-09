@@ -1,6 +1,11 @@
 <!DOCTYPE html>
+<?php
+    session_start();
+    if(!isset($_SESSION['username'])){
+        header('Location: login.php');
+    }
+?>
 <html lang="en">
-
 <head>
     <!-- Required meta tags always come first -->
     <meta charset="utf-8">
@@ -8,7 +13,7 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="node_modules/css/bootstrap.min.css">
     <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="node_modules/bootstrap-social/bootstrap-social.css">
     <link rel="stylesheet" href="css/styles.css">
@@ -26,16 +31,14 @@
                 <ul class="navbar-nav mr-auto">
                     <li class="navbar-iteam active"><a class="nav-link" href="#"><span class="fa fa-home fa-lg"></span>
                             Home</a></li>
-                    <li class="navbar-iteam "><a class="nav-link" href="./aboutus.html"><span
+                    <li class="navbar-iteam "><a class="nav-link" href="./aboutus.php"><span
                                 class="fa fa-info fa-lg"></span> About Us</a></li>
-                    <li class="navbar-iteam "><a class="nav-link" href="#"><span class="fa fa-list fa-lg"></span>
-                            Menu</a></li>
-                    <li class="navbar-iteam "><a class="nav-link" href="./contactus.html"><span
+                    <li class="navbar-iteam "><a class="nav-link" href="./contactus.php"><span
                                 class="fa fa-address-card fa-lg"></span> Contact</a></li>
                 </ul>
                 <span class="navbar-text">
-                    <a href="#" id="LoginButton">
-                        <span class="fa fa-sign-in"></span>Login
+                    <a href="logout.php" id="LoginButton">
+                        <span class="fa fa-sign-in"></span>Logout
                     </a>
                 </span>
             </div>
@@ -44,7 +47,7 @@
 
     </nav>
 
-    <div id="loginModal" class="modal fade" role="dialog">
+    <!-- <div id="loginModal" class="modal fade" role="dialog">
         <div class="modal-dialog modal-lg" role="content">
             <div class="modal-content">
                 <div class="modal-header">
@@ -58,12 +61,12 @@
                         <div class="form-row">
                             <div class="form-group col-sm-4">
                                 <label class="sr-only" for="exampleInputEmail3">Email address</label>
-                                <input type="email" class="form-control form-control-sm mr-1" id="exampleInputEmail3"
+                                <input type="email" class="form-control form-control-sm mr-1" id="exampleInputEmail3" name="email"
                                     placeholder="Enter email">
                             </div>
                             <div class="form-group col-sm-4">
                                 <label class="sr-only" for="exampleInputPassword3">Password</label>
-                                <input type="password" class="form-control form-control-sm mr-1"
+                                <input type="password" class="form-control form-control-sm mr-1" name="passwords"
                                     id="exampleInputPassword3" placeholder="Password">
                             </div>
                             <div class="col-sm-auto">
@@ -77,14 +80,14 @@
                         <div class="form-row">
                             <button type="button" class="btn btn-secondary btn-sm ml-auto"
                                 data-dismiss="modal">Cancel</button>
-                            <button type="submit" class="btn btn-primary btn-sm ml-1">Sign in</button>
+                            <button type="submit" name="sign_in" class="btn btn-primary btn-sm ml-1">Sign in</button>
                         </div>
                     </form>
 
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
 
     <div id="reserveModal" class="modal fade" role="dialog">
         <div class="modal-dialog modal-lg" role="content">
